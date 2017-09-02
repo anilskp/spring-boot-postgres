@@ -30,7 +30,7 @@ node {
     }
     stage('Deploy') {
     	docker.withRegistry('https://registry.hub.docker.com', "dockerhub") {
-			sh "docker run --name springpostgres -p 8888:8080  ${dockerImageName}"
+			sh "docker run -d --name springpostgres -p 8888:8080  ${dockerImageName}"
 		}
     }
 	
