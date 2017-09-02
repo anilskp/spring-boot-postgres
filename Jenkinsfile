@@ -2,9 +2,10 @@ node {
 
 
    def commit_id
+   def dockerImageName = 'anilskp/springcassandra'
 
 
-   stage('Checkout and ANT Build') {
+   stage('Checkout and Maven Build') {
      	docker.image('maven:latest').inside {
 	        echo 'Git Checkout..'        
 	        checkout scm
