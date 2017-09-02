@@ -11,7 +11,9 @@ node {
 	        checkout scm
 	        echo 'Build'
 	        sh "chmod -R 0755 ./"
-	        sh 'mvn clean package -U'
+		writefile file:'settings.xml', text:"<settings><localRepository>${pwd()}/.m2repo</localRepository></settings>"
+	       // sh 'mvn clean package -U'
+		sh 'mvn -B -s settings.xml clean install'
         }
     }
 
