@@ -1,3 +1,3 @@
 FROM openjdk:jre
-ADD springpostgres.jar ./
+ADD target/springpostgres.jar ./
 ENTRYPOINT ["java","-jar","springpostgres.jar"]
