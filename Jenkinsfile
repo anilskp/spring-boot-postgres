@@ -5,7 +5,7 @@ node {
 
 
    stage('Checkout and ANT Build') {
-     	docker.image('anilskp/qr-ant:1.0').inside {
+     	docker.image('maven:latest').inside {
 	        echo 'Git Checkout..'        
 	        checkout scm
 	        echo 'Build'
